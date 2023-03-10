@@ -1,6 +1,7 @@
 /*
 Made by shj at xenosi.de
 License: MIT
+https://github.com/crucifyer/json-safe-stringify
  */
 (function(w, d) {
 	if(!w.XenoJson) w.XenoJson = {};
