@@ -20,6 +20,7 @@ class Json {
 	private static function _RemoveCircular(&$obj, $keyname) {
 		if(!is_array($obj) && !is_object($obj)) return;
 		foreach($obj as $x => &$o) {
+			if(!is_array($o) && !is_object($o)) continue;
 			if(false !== $idx = self::objectSearch($o)) {
 				if(is_array($obj)) {
 					unset($obj[$x]);
