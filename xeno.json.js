@@ -18,6 +18,8 @@ https://github.com/crucifyer/json-safe-stringify
 				case 'array':
 				case 'object':
 					for (let x in obj) {
+						let classType = getClassType(obj[x]);
+						if(classType != 'array' && classType != 'object') continue;
 						let idx = objkeys.indexOf(obj[x]);
 						if (idx > -1) {
 							obj[x] = '__circularObject__' + keynames[idx];
